@@ -311,8 +311,13 @@ public class MainActivity extends AppCompatActivity
         Log.d(TAG, "onStreamReceived: New stream " + stream.getStreamId() + " in session " + session.getSessionId());
 
         final Subscriber subscriber = new Subscriber.Builder(MainActivity.this, stream).build();
+        final Subscriber subscriber2 = new Subscriber.Builder(MainActivity.this, stream).build();
+
         mSession.subscribe(subscriber);
+        mSession.subscribe(subscriber2);
+
         addSubscriber(subscriber);
+        addSubscriber(subscriber2);
     }
 
     @Override
